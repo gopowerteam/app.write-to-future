@@ -1,7 +1,14 @@
 {
-  "rulesDirectory": [
-    // "node_modules/codelyzer"
-  ],
+  "rulesDirectory": [],
+  "linterOptions": {
+    "exclude": [
+      "*.js",
+      "*.json",
+      "**/*.json",
+      "**/*.spec.ts",
+      "node_modules/**/*"
+    ]
+  },
   "extends": [
     "tslint:recommended",
     "tslint-config-standard",
@@ -9,12 +16,7 @@
   ],
   "rules": {
     "no-return-await": false,
-    "object-literal-sort-keys": [
-      false,
-      {
-        "shorthand-first": true
-      }
-    ],
+    "object-literal-sort-keys": false,
     "ordered-imports": [
       true,
       {

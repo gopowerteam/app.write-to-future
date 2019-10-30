@@ -32,26 +32,27 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['assets/styles/default.less'],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/ant-design-vue.js'],
 
   /*
    ** Nuxt.js modules
    */
-  modules: ['nuxt-quasar'],
+  modules: ['@nuxtjs/apollo'],
   buildModules: ['@nuxt/typescript-build'],
   /*
    ** Build configuration
    */
-  build: {
-    transpile: ['quasar'],
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {}
+  build: {},
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'http://localhost:3000/graphql'
+      }
+    }
   }
 }
